@@ -103,4 +103,8 @@ dist
 .tern-port
 
 # package-lock.json
-package-lock.json
+
+.env.development
+.env.production
+.env.testing
+.env.staging
