@@ -19,6 +19,6 @@ USER root
 
 EXPOSE 8080
 
-CMD ["node", "server.js"]
+CMD ["node", "app.js"]
 
 # ENV NODE_ENV=development
