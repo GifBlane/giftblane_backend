@@ -15,7 +15,7 @@ RUN npm install
 # COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY . .
 
-USER nextjs
+USER root
 
 EXPOSE 8080
 
