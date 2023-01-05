@@ -4,6 +4,7 @@ const express = require('express');
 const { getAllUsers } = require('../controllers/Users/GetAllUsers');
 const { createUser } = require('../controllers/Users/CreateUsers');
 const { updateUser } = require('../controllers/Users/UpdateUsers');
+const { getById } = require('../controllers/Users/getByIdUsers');
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -13,6 +14,7 @@ const router = express.Router();
 // example of a route with index controller get function
 router.get('/users', getAllUsers);
 router.post('/users', createUser);
+router.get('/users/:id', userExist, getById);
 router.patch('/users/:id', userExist, updateUser);
 
 module.exports = router;
