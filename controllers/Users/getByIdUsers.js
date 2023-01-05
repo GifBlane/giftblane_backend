@@ -1,29 +1,29 @@
 const createHttpError = require('http-errors');
 const { catchAsync } = require('../../helpers/catchAsync');
 const { endpointResponse } = require('../../helpers/success');
+const { User } = require('../../database/models/');
 const { ErrorObject } = require('../../helpers/error');
-const { User } = require('../../database/models');
 
 module.exports = {
-	getById: catchAsync(async (req, res, next) => {
+	getUserById: catchAsync(async (req, res, next) => {
 		try {
 			const { id } = req.params;
 
-			const userId = await User.findOne({ where: { id } });
+			const user = await User.findOne({ where: { id } });
 
-			if (!userId) {
-				throw next(new ErrorObject(' Id not found ', 400));
+			if (!user) {
+				throw new ErrorObject('ID not found', 404);
 			}
 
 			endpointResponse({
 				res,
 				message: 'result successfully',
-				body: userId,
+				body: user,
 			});
 		} catch (error) {
 			const httpError = createHttpError(
 				error.statusCode,
-				`[Error retrieving index] - [index - GET]: ${error.message}`
+				`[Error retrieving Users] - [getUserById - GET]: ${error.message}`
 			);
 			next(httpError);
 		}
