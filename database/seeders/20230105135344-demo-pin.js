@@ -2,7 +2,7 @@
 
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.bulkInsert('Pin', [
+		return queryInterface.bulkInsert('Pins', [
 			{
 				swap: 'prueba',
 				typeCode: 'n01',
@@ -24,6 +24,6 @@ module.exports = {
 		]);
 	},
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.bulkDelete('Pin', null, {});
+		return queryInterface.bulkDelete('Pins', null, {});
 	},
 };
