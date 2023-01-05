@@ -7,7 +7,8 @@ const { updateUser } = require('../controllers/Users/UpdateUsers');
 const { getUserById } = require('../controllers/Users/getByIdUsers');
 
 //Pins Controllers
-const { getPins, createPin } = require('../controllers/Pines/createPin');
+const { createPin } = require('../controllers/Pines/createPin');
+const { getAllPins } = require('../controllers/Pines/getAllPins');
 
 
 //Middlewares
@@ -24,5 +25,6 @@ router.patch('/users/:id', userExist, updateUser);
 //Pins routes
 
 router.post('/pins', createPin)
+router.get('/pins', getAllPins)
 
 module.exports = router;
