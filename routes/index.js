@@ -12,7 +12,10 @@ const { deleteUser } = require('../controllers/Users/deleteUser');
 //comments
 
 //Pins Controllers
-const { getPins, createPin } = require('../controllers/Pines/createPin');
+
+const { createPin } = require('../controllers/Pines/createPin');
+const { getAllPins } = require('../controllers/Pines/getAllPins');
+
 
 
 //Middlewares
@@ -33,5 +36,7 @@ router.delete('/users/:id', deleteUser);
 //Pins routes
 
 router.post('/pins', createPin)
+router.get('/pins', getAllPins)
+
 
 module.exports = router;
