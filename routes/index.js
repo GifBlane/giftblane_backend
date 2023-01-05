@@ -7,7 +7,7 @@ const { updateUser } = require('../controllers/Users/UpdateUsers');
 const { getUserById } = require('../controllers/Users/getByIdUsers');
 
 //Pins Controllers
-const { createPin } = require('../controllers/Pines/createPin');
+const { getPins, createPin } = require('../controllers/Pines/createPin');
 
 
 //Middlewares
