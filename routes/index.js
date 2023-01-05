@@ -1,6 +1,8 @@
-const express = require('express');
+const express = require('express')
 
-//Controllers Users
+
+//User Controllers
+
 const { getAllUsers } = require('../controllers/Users/GetAllUsers');
 const { createUser } = require('../controllers/Users/CreateUsers');
 const { updateUser } = require('../controllers/Users/UpdateUsers');
@@ -8,6 +10,10 @@ const { getUserById } = require('../controllers/Users/getByIdUsers');
 const { deleteUser } = require('../controllers/Users/deleteUser');
 
 //comments
+
+//Pins Controllers
+const { getPins, createPin } = require('../controllers/Pines/createPin');
+
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -23,5 +29,9 @@ router.patch('/users/:id', userExist, updateUser);
 router.delete('/users/:id', deleteUser);
 
 //Routes Pines
+
+//Pins routes
+
+router.post('/pins', createPin)
 
 module.exports = router;
