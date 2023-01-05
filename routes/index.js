@@ -1,12 +1,14 @@
 const express = require('express')
-const authRoutes = require('./authRoutes');
-const pinsRouter = require('./pinsRouter');
 
-//Controllers
+//User Controllers
 const { getAllUsers } = require('../controllers/Users/GetAllUsers');
 const { createUser } = require('../controllers/Users/CreateUsers');
 const { updateUser } = require('../controllers/Users/UpdateUsers');
 const { getUserById } = require('../controllers/Users/getByIdUsers');
+
+//Pins Controllers
+const { getPins, createPin } = require('../controllers/Pines/createPin');
+
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -18,5 +20,9 @@ router.get('/users', getAllUsers);
 router.post('/users', createUser);
 router.get('/users/:id', getUserById);
 router.patch('/users/:id', userExist, updateUser);
+
+//Pins routes
+
+router.post('/pins', createPin)
 
 module.exports = router;
