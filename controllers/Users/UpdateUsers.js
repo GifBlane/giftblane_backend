@@ -6,9 +6,13 @@ module.exports = {
 	updateUser: catchAsync(async (req, res, next) => {
 		try {
 			const { user } = req;
+			const { name, lastname, email, type_id } = req.body;
 
 			await user.update({
-				...body,
+				name,
+				lastname,
+				email,
+				type_id,
 			});
 
 			endpointResponse({
