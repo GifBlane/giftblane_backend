@@ -21,10 +21,10 @@ module.exports = (sequelize, DataTypes) => {
     } */
 	}
 	RechargePin.init(
-		{
+		/* {
 			idPin: DataTypes.INTEGER,
 			idRecharge: DataTypes.INTEGER,
-		},
+		}, */
 		{
 			sequelize,
 			modelName: 'RechargePin',
