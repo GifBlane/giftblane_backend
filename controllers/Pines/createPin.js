@@ -15,13 +15,13 @@ module.exports = {
         code,
         typeCard,
       });
-      console.log("asdsad");
 
       endpointResponse({
         res,
         message: "Pin retrieved successfully",
         body: newPin,
       });
+
     } catch (error) {
       const httpError = createHttpError(
         error.statusCode,
