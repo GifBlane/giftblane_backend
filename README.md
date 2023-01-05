@@ -58,3 +58,4 @@ El mismo es una extensión de el objecto Error nativo de JS. Sirve para devolver
 
 
 
+# gifBlane
