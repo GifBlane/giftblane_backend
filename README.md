@@ -36,14 +36,6 @@ npx sequelize db:migrate
 npx sequelize db:drop
 ```
 
-### creacion de seeders
-
-npx sequelize-cli seed:generate --name demo-user
-
-### migrar sedeer a base de datos
-
-npx sequelize db:seed:all
-
 ## 🏗 Algunos datos del proyecto:
 
 -   La estructura de carpetas es del patron MVC
