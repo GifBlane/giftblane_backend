@@ -1,4 +1,4 @@
-const { User } = require('../database/models');
+const { User } = require('../database/models/');
 const { catchAsync } = require('../helpers/catchAsync');
 const { ErrorObject } = require('../helpers/error');
 
