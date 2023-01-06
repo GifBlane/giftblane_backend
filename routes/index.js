@@ -15,6 +15,7 @@ const { deleteUser } = require('../controllers/Users/deleteUser');
 
 const { createPin } = require('../controllers/Pines/createPin');
 const { getAllPins } = require('../controllers/Pines/getAllPins');
+const { updatePin } = require('../controllers/Pines/updatePin');
 
 
 
@@ -37,6 +38,7 @@ router.delete('/users/:id', deleteUser);
 
 router.post('/pins', createPin)
 router.get('/pins', getAllPins)
+router.patch('/pins/:id', updatePin)
 
 
 module.exports = router;
