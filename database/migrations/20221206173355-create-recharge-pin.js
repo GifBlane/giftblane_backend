@@ -17,15 +17,16 @@ module.exports = {
 				onDelet: 'CASCADE',
 				onUpdate: 'CASCADE',
 			},
-			/*    idRecharge: {
-        type: Sequelize.INTEGER,
-        references: {
+			idRecharge: {
+				type: Sequelize.INTEGER,
+				/* references: {
           model: 'Recharges',
           key: 'id'
         },
         onDelet: 'CASCADE',
         onUpdate: 'CASCADE'
-      }, */
+		*/
+			},
 			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE,
