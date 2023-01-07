@@ -11,6 +11,9 @@ const { deleteUser } = require('../controllers/Users/deleteUser');
 
 //comments
 
+//Controller recharges
+const {getRecharge, createRecharge} = require('../controllers/Recharge/createRecharge')
+
 //Pins Controllers
 
 const { createPin } = require('../controllers/Pines/createPin');
@@ -39,6 +42,10 @@ router.delete('/users/:id', deleteUser);
 router.post('/pins', createPin)
 router.get('/pins', getAllPins)
 router.patch('/pins/:id', updatePin)
+
+//Routes Recharge
+router.post('/recharge', createRecharge)
+
 
 
 module.exports = router;
