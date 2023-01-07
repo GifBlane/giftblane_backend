@@ -46,6 +46,4 @@ router.patch('/pins/:id', updatePin)
 //Routes Recharge
 router.post('/recharge', createRecharge)
 
-
-
 module.exports = router;

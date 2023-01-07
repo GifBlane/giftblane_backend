@@ -10,7 +10,7 @@
 		"url": "https://github.com/IMatfres"
 	},
 	"scripts": {
-		"start": "node app.js",
+		"start": "nodemon app.js",
 		"test": "mocha ./test/*.js"
 	},
 	"engines": {
