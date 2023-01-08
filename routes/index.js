@@ -12,7 +12,6 @@ const { createRecharge } = require('../controllers/Recharge/createRecharge')
 const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge')
 const { getRechargeById } = require('../controllers/Recharge/RechargeById')
 
-
 //Pins Controllers
 const { createPin } = require('../controllers/Pines/createPin');
 const { getAllPins } = require('../controllers/Pines/getAllPins');
@@ -43,5 +42,6 @@ router.patch('/pins/:id', updatePin)
 router.post('/recharge', createRecharge)
 router.get('/recharge', getAllRecharge)
 router.patch('/recharge/:id', getRechargeById)
+
 
 module.exports = router;
