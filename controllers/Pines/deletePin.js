@@ -2,12 +2,13 @@ const createHttpError = require("http-errors");
 const { Pin } = require("../../database/models");
 const { endpointResponse } = require("../../helpers/success");
 const { catchAsync } = require("../../helpers/catchAsync");
+const { ErrorObject } = require("../../helpers/error");
 
 module.exports = {
   deletePin: catchAsync(async (req, res, next) => {
     try {
       const { id } = req.params;
-      console.log(id)
+      
       const deletePin = await Pin.update({
         status: 'deleted'
       },
