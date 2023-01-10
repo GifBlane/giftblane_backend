@@ -37,7 +37,7 @@ router.delete('/users/:id', deleteUser);
 
 router.post('/pins', createPin)
 router.get('/pins', getAllPins)
-router.patch('/pins/delete/:id([0-9]+)', deletePin)
+router.delete('/pins/delete/:id([0-9]+)', deletePin)
 router.patch('/pins/:id([0-9]+)', updatePin)
 
 //Routes Recharge
