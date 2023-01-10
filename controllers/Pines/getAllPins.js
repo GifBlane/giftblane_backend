@@ -10,7 +10,7 @@ module.exports = {
             const pins = await Pin.findAll()
             endpointResponse({
                 res,
-                message: 'Users  retrieved successfully',
+                message: 'Pin retrieved successfully',
                 body: pins,
             });
         } catch (error) {
