@@ -16,6 +16,7 @@ const { getRechargeById } = require('../controllers/Recharge/RechargeById')
 const { createPin } = require('../controllers/Pines/createPin');
 const { getAllPins } = require('../controllers/Pines/getAllPins');
 const { updatePin } = require('../controllers/Pines/updatePin');
+const { deletePin } = require('../controllers/Pines/deletePin');
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -37,6 +38,7 @@ router.delete('/users/:id', deleteUser);
 router.post('/pins', createPin)
 router.get('/pins', getAllPins)
 router.patch('/pins/:id', updatePin)
+router.patch('/pins/delete/:id', deletePin)
 
 //Routes Recharge
 router.post('/recharge', createRecharge)
