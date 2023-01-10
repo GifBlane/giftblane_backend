@@ -19,6 +19,9 @@ const { updatePin } = require('../controllers/Pines/updatePin');
 const { deletePin } = require('../controllers/Pines/deletePin');
 const { getByIdPin } = require('../controllers/Pines/getByIdPin');
 
+//Commerces Controllers
+const { getAllCommerces } = require('../controllers/Commerces/getAllCommerces');
+
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
 
@@ -47,6 +50,10 @@ router.patch('/pins/:id([0-9]+)', updatePin)
 router.post('/recharge', createRecharge)
 router.get('/recharge', getAllRecharge)
 router.patch('/recharge/:id', getRechargeById)
+
+//Routes Commerce
+
+router.get('/commerce', getAllCommerces)
 
 
 module.exports = router;
