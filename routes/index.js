@@ -7,16 +7,18 @@ const { updateUser } = require('../controllers/Users/UpdateUsers');
 const { getUserById } = require('../controllers/Users/getByIdUsers');
 const { deleteUser } = require('../controllers/Users/deleteUser');
 
-//Controller recharges
+//Recharges Controller
 const { createRecharge } = require('../controllers/Recharge/createRecharge')
 const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge')
 const { getRechargeById } = require('../controllers/Recharge/RechargeById')
-
 
 //Pins Controllers
 const { createPin } = require('../controllers/Pines/createPin');
 const { getAllPins } = require('../controllers/Pines/getAllPins');
 const { updatePin } = require('../controllers/Pines/updatePin');
+
+//Settings Controllers
+const { createSettings } = require('../controllers/Settings/setting')
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -43,5 +45,8 @@ router.patch('/pins/:id', updatePin)
 router.post('/recharge', createRecharge)
 router.get('/recharge', getAllRecharge)
 router.patch('/recharge/:id', getRechargeById)
+
+//Routes Settings
+router.post('/settings', createSettings)
 
 module.exports = router;
