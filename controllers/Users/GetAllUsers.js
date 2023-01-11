@@ -11,7 +11,7 @@ module.exports = {
 		try {
 			//get the query params
 
-			const { email = null, page = null, limit = 10 } = req.query;
+			const { email = null, page = 1, limit = 10 } = req.query;
 
 			if (email === page) {
 				throw new ErrorObject('the params query not found', 404);
@@ -26,13 +26,7 @@ module.exports = {
 			}
 			// transform function that can be passed to the paginate method
 
-			const transform = records => {
-				return records.map(User => {
-					return {
-						User,
-					};
-				});
-			};
+			const transform = records => records;
 
 			// paginate method that takes in the model, limit, search object, order and transform
 
