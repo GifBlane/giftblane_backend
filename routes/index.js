@@ -10,18 +10,14 @@ const { updateUser } = require('../controllers/Users/UpdateUsers');
 const { getUserById } = require('../controllers/Users/getByIdUsers');
 const { deleteUser } = require('../controllers/Users/deleteUser');
 
-//Recharges Controller
-const { createRecharge } = require('../controllers/Recharge/createRecharge')
-const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge')
-const { getRechargeById } = require('../controllers/Recharge/RechargeById')
-
 //comments
 
 //Pins Controllers
 const { createPin } = require('../controllers/Pines/createPin');
 const { getAllPins } = require('../controllers/Pines/getAllPins');
 const { updatePin } = require('../controllers/Pines/updatePin');
-
+const { deletePin } = require('../controllers/Pines/deletePin');
+const { getByIdPin } = require('../controllers/Pines/getByIdPin');
 
 //Recharges Controllers
 
@@ -39,7 +35,7 @@ const { getByIdCommerce } = require('../controllers/Commerces/getByIdCommerce');
 //Settings Controllers
 
 const { createSettings } = require('../controllers/Settings/setting');
-const { getAllSettings } = require('../controllers/Settings/getAllSettings');
+const { getAllSettings } = require('../controllers/Settings/getAllSettings')
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -57,7 +53,6 @@ router.patch('/users/:id', userExist, updateUser);
 router.delete('/users/:id', deleteUser);
 
 //Routes Pines
-
 router.post('/pins', createPin);
 router.get('/pins', getAllPins);
 router.get('/pins/:id([0-9]+)', getByIdPin);
@@ -69,7 +64,6 @@ router.post('/recharge', createRecharge);
 router.get('/recharge', getAllRecharge);
 router.patch('/recharge/:id', getRechargeById);
 
-
 //Routes Commerce
 router.get('/commerce', getAllCommerces);
 router.patch('/commerce/:id([0-9]+)', updateCommerce)
@@ -78,6 +72,6 @@ router.get('/commerce/:id([0-9]+)', getByIdCommerce)
 
 //Routes Settings
 router.post('/settings', createSettings);
-router.get('getSettings', getAllSettings);
+router.get('/allSettings', getAllSettings);
 
 module.exports = router;
