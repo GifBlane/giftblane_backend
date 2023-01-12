@@ -14,6 +14,14 @@ module.exports = {
 			lastname: {
 				type: Sequelize.STRING,
 			},
+			email: {
+				type: Sequelize.STRING,
+				unique: true,
+			},
+			password: {
+				type: Sequelize.STRING,
+				allowNull: false,
+			},
 			idSetting: {
 				type: Sequelize.INTEGER,
 				references: {
@@ -23,11 +31,14 @@ module.exports = {
 				onDelet: 'CASCADE',
 				onUpdate: 'CASCADE',
 			},
-			email: {
-				type: Sequelize.STRING,
-			},
 			type_id: {
-				type: Sequelize.INTEGER,
+				type: Sequelize.ENUM('cc', 'pasaporte'),
+				allowNull: false,
+			},
+			num_id: {
+				type: Sequelize.DOUBLE,
+				unique: true,
+				allowNull: false,
 			},
 			createdAt: {
 				allowNull: false,

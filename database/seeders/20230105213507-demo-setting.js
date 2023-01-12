@@ -6,10 +6,9 @@ module.exports = {
 			{
 				percentage: 5,
 				role: 'admin',
-				password: 'pass1234',
 				idUser: 1,
 				isVerify: true,
-				type: 'also',
+				type: 'ADMIN',
 				createdAt: new Date(),
 				updatedAt: new Date(),
 			},

@@ -6,13 +6,16 @@ const { catchAsync } = require('../../helpers/catchAsync');
 module.exports = {
 	createUser: catchAsync(async (req, res, next) => {
 		try {
-			const { name, lastname, email, type_id } = req.body;
+			const { name, lastname, email, password, type_id, num_id } =
+				req.body;
 
 			const newUser = await User.create({
 				name,
 				lastname,
 				email,
+				password,
 				type_id,
+				num_id,
 			});
 
 			endpointResponse({
