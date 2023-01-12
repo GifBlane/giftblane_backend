@@ -30,6 +30,8 @@ const { getRechargeById } = require('../controllers/Recharge/RechargeById');
 const { getAllCommerces } = require('../controllers/Commerces/getAllCommerces');
 const { updateCommerce }= require('../controllers/Commerces/updateCommerce');
 
+const { getByIdCommerce } = require('../controllers/Commerces/getByIdCommerce');
+
 //Settings Controllers
 
 const { createSettings } = require('../controllers/Settings/setting');
@@ -64,6 +66,8 @@ router.patch('/recharge/:id', getRechargeById);
 //Routes Commerce
 router.get('/commerce', getAllCommerces);
 router.patch('/commerce/:id([0-9]+)', updateCommerce)
+
+router.get('/commerce/:id([0-9]+)', getByIdCommerce)
 
 //Routes Settings
 router.post('/settings', createSettings);
