@@ -2,6 +2,7 @@ const createHttpError = require('http-errors');
 const { catchAsync } = require('../../helpers/catchAsync');
 const { endpointResponse } = require('../../helpers/success');
 const { User } = require('../../database/models/');
+const { Setting } = require('../../database/models');
 const { ErrorObject } = require('../../helpers/error');
 
 module.exports = {
@@ -9,7 +10,10 @@ module.exports = {
 		try {
 			const { id } = req.params;
 
-			const user = await User.findOne({ where: { id } });
+			const user = await User.findOne({
+				where: { id },
+				include: { Model: Setting },
+			});
 
 			if (!user) {
 				throw new ErrorObject('ID not found', 404);

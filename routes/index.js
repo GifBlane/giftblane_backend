@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 
 //User Controllers
 const { getAllUsers } = require('../controllers/Users/GetAllUsers');
@@ -16,14 +16,25 @@ const { updatePin } = require('../controllers/Pines/updatePin');
 const { deletePin } = require('../controllers/Pines/deletePin');
 const { getByIdPin } = require('../controllers/Pines/getByIdPin');
 
+//Recharges Controllers
 
+const { createRecharge } = require('../controllers/Recharge/createRecharge');
+const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge');
+const { getRechargeById } = require('../controllers/Recharge/RechargeById');
+
+//Commerces Controllers
+
+const { getAllCommerces } = require('../controllers/Commerces/getAllCommerces');
+
+//Settings Controllers
+
+const { createSettings } = require('../controllers/Settings/setting');
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
 
 const router = express.Router();
 
-// example of a route with index controller get function
 //Routes Users
 router.get('/users', getAllUsers);
 router.post('/users', createUser);
@@ -32,31 +43,21 @@ router.patch('/users/:id', userExist, updateUser);
 router.delete('/users/:id', deleteUser);
 
 //Routes Pines
-
-//Pins routes
-
-router.post('/pins', createPin)
-router.get('/pins', getAllPins)
-router.get('/pins/:id([0-9]+)', getByIdPin)
-router.delete('/pins/delete/:id([0-9]+)', deletePin)
-router.patch('/pins/:id([0-9]+)', updatePin)
-
+router.post('/pins', createPin);
+router.get('/pins', getAllPins);
+router.get('/pins/:id([0-9]+)', getByIdPin);
+router.delete('/pins/delete/:id([0-9]+)', deletePin);
+router.patch('/pins/:id([0-9]+)', updatePin);
 
 //Routes Recharge
-router.post('/recharge', createRecharge)
-router.get('/recharge', getAllRecharge)
-router.patch('/recharge/:id', getRechargeById)
+router.post('/recharge', createRecharge);
+router.get('/recharge', getAllRecharge);
+router.patch('/recharge/:id', getRechargeById);
 
 //Routes Commerce
-
-router.get('/commerce', getAllCommerces)
-
-//Routes Recharge
-router.post('/recharge', createRecharge)
-router.get('/recharge', getAllRecharge)
-router.patch('/recharge/:id', getRechargeById)
+router.get('/commerce', getAllCommerces);
 
 //Routes Settings
-router.post('/settings', createSettings)
+router.post('/settings', createSettings);
 
 module.exports = router;
