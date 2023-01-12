@@ -2,6 +2,7 @@ const createHttpError = require('http-errors');
 const { User } = require('../../database/models');
 const { endpointResponse } = require('../../helpers/success');
 const { catchAsync } = require('../../helpers/catchAsync');
+const bcrypt = require('bcrypt');
 
 module.exports = {
 	createUser: catchAsync(async (req, res, next) => {
@@ -9,11 +10,14 @@ module.exports = {
 			const { name, lastname, email, password, type_id, num_id } =
 				req.body;
 
+			const salt = await bcrypt.genSalt(12);
+
+			const hashPassword = await bcrypt.hash(password, salt);
 			const newUser = await User.create({
 				name,
 				lastname,
 				email,
-				password,
+				password: hashPassword,
 				type_id,
 				num_id,
 			});

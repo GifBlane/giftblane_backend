@@ -11,25 +11,32 @@ dotenv.config();
 module.exports = {
 	loginUser: catchAsync(async (req, res, next) => {
 		try {
+			const { email, password } = req.body;
+
 			const user = await User.findOne({
-				where: { email: req.body.email },
+				where: { email },
 			});
 
 			if (!user)
 				throw new ErrorObject(
-					`error user with email ${req.body.email} does not exist`,
+					`error user with email ${email} does not exist`,
 					404
 				);
 
-			const validatePass = await bcrypt.compare(
-				req.body.password,
-				user.password
-			);
-			if (!validatePass)
+			/* const validatePass = await bcrypt.compare(password, user.password);
+			 */
+			/* if (!validatePass)
+				throw new ErrorObject(
+					'You have entered an invalid password',
+					404
+				); */
+
+			if (password !== user.password) {
 				throw new ErrorObject(
 					'You have entered an invalid password',
 					404
 				);
+			}
 			const token = jwt.sign(
 				{ id: user.id },
 				process.env.SECRETORPRIVATEKEY,

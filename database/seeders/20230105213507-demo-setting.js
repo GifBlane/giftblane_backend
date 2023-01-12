@@ -12,6 +12,24 @@ module.exports = {
 				createdAt: new Date(),
 				updatedAt: new Date(),
 			},
+			{
+				percentage: 5,
+				role: 'seller',
+				idUser: 3,
+				isVerify: true,
+				type: 'BLACK',
+				createdAt: new Date(),
+				updatedAt: new Date(),
+			},
+			{
+				percentage: 5,
+				role: 'seller',
+				idUser: 2,
+				isVerify: true,
+				type: 'NEMO',
+				createdAt: new Date(),
+				updatedAt: new Date(),
+			},
 		]);
 	},
 	down: (queryInterface, Sequelize) => {
