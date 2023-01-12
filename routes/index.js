@@ -1,5 +1,8 @@
 const express = require('express');
 
+//Login Controller
+const { loginUser } = require('../controllers/Auth/login');
+
 //User Controllers
 const { getAllUsers } = require('../controllers/Users/GetAllUsers');
 const { createUser } = require('../controllers/Users/CreateUsers');
@@ -34,6 +37,9 @@ const { createSettings } = require('../controllers/Settings/setting');
 const { userExist } = require('../middlewares/userExist');
 
 const router = express.Router();
+
+//Routes Login
+router.post('/auth/login', loginUser);
 
 //Routes Users
 router.get('/users', getAllUsers);
