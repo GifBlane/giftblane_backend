@@ -14,15 +14,15 @@ module.exports = {
 			lastname: {
 				type: Sequelize.STRING,
 			},
-			/*    idSetting: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Settings',
-          key: 'id'
-        },
-        onDelet: 'CASCADE',
-        onUpdate: 'CASCADE'
-      }, */
+			idSetting: {
+				type: Sequelize.INTEGER,
+				references: {
+					model: 'Settings',
+					key: 'id',
+				},
+				onDelet: 'CASCADE',
+				onUpdate: 'CASCADE',
+			},
 			email: {
 				type: Sequelize.STRING,
 			},
