@@ -1,4 +1,7 @@
-const express = require('express')
+const express = require('express');
+
+//Login Controller
+const { loginUser } = require('../controllers/Auth/login');
 
 //User Controllers
 const { getAllUsers } = require('../controllers/Users/GetAllUsers');
@@ -12,20 +15,39 @@ const { createRecharge } = require('../controllers/Recharge/createRecharge')
 const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge')
 const { getRechargeById } = require('../controllers/Recharge/RechargeById')
 
+//comments
+
 //Pins Controllers
 const { createPin } = require('../controllers/Pines/createPin');
 const { getAllPins } = require('../controllers/Pines/getAllPins');
 const { updatePin } = require('../controllers/Pines/updatePin');
 
+
+//Recharges Controllers
+
+const { createRecharge } = require('../controllers/Recharge/createRecharge');
+const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge');
+const { getRechargeById } = require('../controllers/Recharge/RechargeById');
+
+//Commerces Controllers
+
+const { getAllCommerces } = require('../controllers/Commerces/getAllCommerces');
+const { updateCommerce }= require('../controllers/Commerces/updateCommerce');
+
+const { getByIdCommerce } = require('../controllers/Commerces/getByIdCommerce');
+
 //Settings Controllers
-const { createSettings } = require('../controllers/Settings/setting')
+
+const { createSettings } = require('../controllers/Settings/setting');
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
 
 const router = express.Router();
 
-// example of a route with index controller get function
+//Routes Login
+router.post('/auth/login', loginUser);
+
 //Routes Users
 router.get('/users', getAllUsers);
 router.post('/users', createUser);
@@ -35,18 +57,25 @@ router.delete('/users/:id', deleteUser);
 
 //Routes Pines
 
-//Pins routes
-
-router.post('/pins', createPin)
-router.get('/pins', getAllPins)
-router.patch('/pins/:id', updatePin)
+router.post('/pins', createPin);
+router.get('/pins', getAllPins);
+router.get('/pins/:id([0-9]+)', getByIdPin);
+router.delete('/pins/delete/:id([0-9]+)', deletePin);
+router.patch('/pins/:id([0-9]+)', updatePin);
 
 //Routes Recharge
-router.post('/recharge', createRecharge)
-router.get('/recharge', getAllRecharge)
-router.patch('/recharge/:id', getRechargeById)
+router.post('/recharge', createRecharge);
+router.get('/recharge', getAllRecharge);
+router.patch('/recharge/:id', getRechargeById);
+
+
+//Routes Commerce
+router.get('/commerce', getAllCommerces);
+router.patch('/commerce/:id([0-9]+)', updateCommerce)
+
+router.get('/commerce/:id([0-9]+)', getByIdCommerce)
 
 //Routes Settings
-router.post('/settings', createSettings)
+router.post('/settings', createSettings);
 
 module.exports = router;

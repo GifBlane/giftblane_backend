@@ -19,7 +19,6 @@ module.exports = (sequelize, DataTypes) => {
 		{
 			percentage: DataTypes.INTEGER,
 			role: DataTypes.STRING,
-			password: DataTypes.STRING,
 			idUser: DataTypes.INTEGER,
 			isVerify: DataTypes.BOOLEAN,
 			type: DataTypes.STRING,
