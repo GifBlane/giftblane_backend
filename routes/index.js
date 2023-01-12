@@ -65,7 +65,7 @@ router.patch('/recharge/:id', getRechargeById);
 //Routes Commerce
 router.get('/commerce', getAllCommerces);
 
-router.get('/commerce/:id', getByIdCommerce)
+router.get('/commerce/:id([0-9]+)', getByIdCommerce)
 
 //Routes Settings
 router.post('/settings', createSettings);
