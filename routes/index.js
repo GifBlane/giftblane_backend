@@ -37,6 +37,7 @@ const { getByIdCommerce } = require('../controllers/Commerces/getByIdCommerce');
 
 const { createSettings } = require('../controllers/Settings/setting');
 const { getAllSettings } = require('../controllers/Settings/getAllSettings')
+const { settingById } = require('../controllers/Settings/settingById')
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -74,5 +75,6 @@ router.get('/commerce/:id([0-9]+)', getByIdCommerce)
 //Routes Settings
 router.post('/settings', createSettings);
 router.get('/allSettings', getAllSettings);
+router.get('/settingById/:id', settingById);
 
 module.exports = router;
