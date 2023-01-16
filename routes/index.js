@@ -31,6 +31,8 @@ const { getAllCommerces } = require('../controllers/Commerces/getAllCommerces');
 const { updateCommerce }= require('../controllers/Commerces/updateCommerce');
 const { createCommerce } = require('../controllers/Commerces/createCommerce');
 const { getByIdCommerce } = require('../controllers/Commerces/getByIdCommerce');
+const { deleteCommerce } = require('../controllers/Commerces/deleteCommerce');
+
 
 
 //Settings Controllers
@@ -70,6 +72,7 @@ router.get('/commerce', getAllCommerces);
 router.patch('/commerce/:id([0-9]+)', updateCommerce)
 router.post('/commerce', createCommerce)
 router.get('/commerce/:id([0-9]+)', getByIdCommerce)
+router.delete('/commerce/:id([0-9]+)', deleteCommerce)
 
 //Routes Settings
 router.post('/settings', createSettings);

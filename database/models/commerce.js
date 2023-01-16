@@ -7,19 +7,19 @@ module.exports = (sequelize, DataTypes) => {
 		 * This method is not a part of Sequelize lifecycle.
 		 * The `models/index` file will call this method automatically.
 		 */
-		/*  static associate(models) {
+		  static associate(models) {
       // define association here
       Commerce.belongsToMany(models.User, {
         through: 'commerce_users',
         as:'Users',
-        foreignKey:'idUser'
-        
+        foreignKey:'idUser',
       })
 
       Commerce.hasMany(models.Recharge, {
-        foreignKey:'idComerce'
+        foreignKey:'idComerce',
+
       })
-    } */
+    } 
 	}
 	Commerce.init(
 		{
