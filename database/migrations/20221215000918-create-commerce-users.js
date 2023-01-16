@@ -10,21 +10,23 @@ module.exports = {
       },
       idUser: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Users',
-          key: 'id'
-        },
-        onDelet: 'CASCADE',
-        onUpdate: 'CASCADE'
+        defaultValue: 1,
+        // references: {
+        //   model: 'Users',
+        //   key: 'id'
+        // },
+        onDelet: 'SET NULL',
+        onUpdate: 'SET NULL'
       },
       idCommerce: {
         type: Sequelize.INTEGER,
-        references: {
-          model: 'Commerces',
-          key: 'id'
-        },
-        onDelet: 'CASCADE',
-        onUpdate: 'CASCADE'
+        defaultValue: 1,
+        // references: {
+        //   model: 'Commerces',
+        //   key: 'id'
+        // },
+        onDelet: 'SET NULL',
+        onUpdate: 'SET NULL'
       },
       createdAt: {
         allowNull: false,
