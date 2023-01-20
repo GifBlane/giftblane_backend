@@ -24,6 +24,7 @@ const { getByIdPin } = require('../controllers/Pines/getByIdPin');
 const { createRecharge } = require('../controllers/Recharge/createRecharge');
 const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge');
 const { getRechargeById } = require('../controllers/Recharge/RechargeById');
+const { deleteRecharge } = require('../controllers/Recharge/deleteRecharge')
 
 //Commerces Controllers
 
@@ -39,6 +40,7 @@ const { deleteCommerce } = require('../controllers/Commerces/deleteCommerce');
 
 const { createSettings } = require('../controllers/Settings/setting');
 const { getAllSettings } = require('../controllers/Settings/getAllSettings')
+const { settingById } = require('../controllers/Settings/settingById')
 
 //Middlewares
 const { userExist } = require('../middlewares/userExist');
@@ -66,6 +68,7 @@ router.patch('/pins/:id([0-9]+)', updatePin);
 router.post('/recharge', createRecharge);
 router.get('/recharge', getAllRecharge);
 router.patch('/recharge/:id', getRechargeById);
+router.delete('/recharge/delete/:id', deleteRecharge);
 
 //Routes Commerce
 router.get('/commerce', getAllCommerces);
@@ -77,5 +80,6 @@ router.delete('/commerce/:id([0-9]+)', deleteCommerce)
 //Routes Settings
 router.post('/settings', createSettings);
 router.get('/allSettings', getAllSettings);
+router.get('/settingById/:id', settingById);
 
 module.exports = router;
