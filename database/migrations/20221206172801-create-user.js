@@ -11,7 +11,7 @@ module.exports = {
 			name: {
 				type: Sequelize.STRING,
 			},
-			lastname: {
+			lastName: {
 				type: Sequelize.STRING,
 			},
 			email: {
@@ -31,11 +31,11 @@ module.exports = {
 				onDelet: 'CASCADE',
 				onUpdate: 'CASCADE',
 			},
-			type_id: {
+			typeId: {
 				type: Sequelize.ENUM('cc', 'pasaporte'),
 				allowNull: false,
 			},
-			num_id: {
+			numId: {
 				type: Sequelize.DOUBLE,
 				unique: true,
 				allowNull: false,

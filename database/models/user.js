@@ -24,11 +24,11 @@ module.exports = (sequelize, DataTypes) => {
 	User.init(
 		{
 			name: DataTypes.STRING,
-			lastname: DataTypes.STRING,
+			lastName: DataTypes.STRING,
 			email: DataTypes.STRING,
 			password: DataTypes.STRING,
-			type_id: DataTypes.ENUM('cc', 'pasaporte'),
-			num_id: DataTypes.DOUBLE,
+			typeId: DataTypes.ENUM('cc', 'pasaporte'),
+			numId: DataTypes.DOUBLE,
 		},
 		{
 			sequelize,
