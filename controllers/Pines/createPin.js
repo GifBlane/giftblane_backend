@@ -6,14 +6,14 @@ const { catchAsync } = require('../../helpers/catchAsync');
 module.exports = {
 	createPin: catchAsync(async (req, res, next) => {
 		try {
-			const { swap, typeCode, status, code, typeCard } = req.body;
+			const { swap, code, status, typeCard, dateVigencia } = req.body;
 
 			const newPin = await Pin.create({
-				swap,
-				typeCode,
-				status,
-				code,
 				typeCard,
+				code,
+				status,
+				swap,
+				dateVigencia,
 			});
 
 			endpointResponse({

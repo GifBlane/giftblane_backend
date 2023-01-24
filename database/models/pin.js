@@ -16,11 +16,12 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Pin.init(
 		{
-			swap: DataTypes.STRING,
-			typeCode: DataTypes.STRING,
-			status: DataTypes.STRING,
+			typeCard: DataTypes.ENUM('nemo', 'black'),
 			code: DataTypes.STRING,
-			typeCard: DataTypes.STRING,
+			status: DataTypes.STRING,
+			typeCode: DataTypes.STRING,
+			swap: DataTypes.ENUM('buy', 'game'),
+			dateVigencia: DataTypes.DATE,
 		},
 		{
 			sequelize,
