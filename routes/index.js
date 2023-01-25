@@ -24,7 +24,9 @@ const { getByIdPin } = require('../controllers/Pines/getByIdPin');
 const { createRecharge } = require('../controllers/Recharge/createRecharge');
 const { getAllRecharge } = require('../controllers/Recharge/getAllRecharge');
 const { getRechargeById } = require('../controllers/Recharge/RechargeById');
-const { deleteRecharge } = require('../controllers/Recharge/deleteRecharge')
+const { deleteRecharge } = require('../controllers/Recharge/deleteRecharge');
+const { updateRecharge } = require('../controllers/Recharge/updateRecharge');
+
 
 //Commerces Controllers
 
@@ -69,6 +71,7 @@ router.post('/recharge', createRecharge);
 router.get('/recharge', getAllRecharge);
 router.patch('/recharge/:id', getRechargeById);
 router.delete('/recharge/delete/:id', deleteRecharge);
+router.patch('/recharge/:id([0-9]+)', updateRecharge)
 
 //Routes Commerce
 router.get('/commerce', getAllCommerces);
